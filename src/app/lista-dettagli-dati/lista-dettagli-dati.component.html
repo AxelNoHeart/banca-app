@@ -1,0 +1,14 @@
+<div class="card mb-4" style="width: 25rem;" *ngIf="lista"
+    [style.background-color]="lista.type == 'invoice' ? '#1b8a65' : 'trasparent'"
+    [style.background-color]="lista.type == 'withdrawal' ? 'grey' : 'trasparent'">
+    <div class="card-body">
+        <h4 class="card-title">{{lista.business}}</h4>
+        <p>{{lista.name}}</p>
+        <p>Account: {{lista.account}}</p>
+        <p>Date: {{lista.date*1000 | date}}</p>
+        <p>Type: {{lista.type}}</p>
+        <p [style.background-color]="lista.amount >= 700 ? 'yellow' : 'trasparent'">Amount:
+            ${{lista.amount}}
+        </p>
+    </div>
+</div>
